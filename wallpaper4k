@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Téléchargement d'Images 4K</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            text-align: center;
+            padding: 20px;
+            background-image: url('https://i.pinimg.com/originals/98/8d/af/988daf4c48ad4f7c324089c116be6669.jpg');
+            background-size: cover;
+            background-attachment: fixed;
+            color: white;
+            animation: fadeIn 2s ease-in;
+            margin: 0;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        .logo {
+            max-width: 100px;
+            margin: 0 auto 20px;
+            animation: bounce 2s infinite;
+        }
+        @keyframes bounce {
+            0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
+            40% { transform: translateY(-30px); }
+            60% { transform: translateY(-15px); }
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .image-container {
+            margin: 10px;
+            border: 2px solid #fff;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: transform 0.3s;
+            width: calc(50% - 20px);
+            max-width: 200px;
+        }
+        .image-container:hover {
+            transform: scale(1.05);
+        }
+        .image-container img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            cursor: pointer;
+        }
+        #password-section {
+            margin-bottom: 20px;
+        }
+        input[type="password"] {
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            margin-right: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            background-color: #4CAF50;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.9);
+        }
+        .modal-content {
+            margin: 15% auto;
+            display: block;
+            width: 80%;
+            max-width: 700px;
+        }
+        .close {
+            position: absolute;
+            top: 15px;
+            right: 35px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .close:hover,
+        .close:focus {
+            color: #bbb;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        @media (max-width: 600px) {
+            body {
+                padding: 10px;
+            }
+            .logo {
+                max-width: 80px;
+            }
+            button {
+                padding: 8px 16px;
+            }
+            .image-container {
+                width: 100%;
+                max-width: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <img src="https://media.istockphoto.com/vectors/ultra-hd-symbol-vector-id947483676?k=20&m=947483676&s=612x612&w=0&h=81DUxGbxzB6NxvFlyBP22u3KrEHjewdr-JuLaNTAuTQ=" alt="Logo" class="logo">
+    <h1>Téléchargement d'Images 4K</h1>
+    <div id="password-section">
+        <label for="password">Entrez le mot de passe :</label>
+        <input type="password" id="password" placeholder="Mot de passe">
+        <button onclick="checkPassword()">Valider</button>
+    </div>
+    <div id="image-section" style="display: none;">
+        <div class="gallery">
+            <div class="image-container">
+                <img src="https://w0.peakpx.com/wallpaper/664/252/HD-wallpaper-peaceful-nature-mountain-boat-scenery.jpg" alt="Image 1" onclick="openModal(this.src)">
+            </div>
+            <div class="image-container">
+                <img src="https://wallpaperaccess.com/full/619675.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpaperaccess.com/full/696230.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://th.bing.com/th/id/OIP._jACEVpT0xyvwddhdAY5BgHaNK?rs=1&pid=ImgDetMain" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://th.bing.com/th/id/OIP.7dBgGXEE5ZRCTq0I-biB0AHaNK?rs=1&pid=ImgDetMain" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://th.bing.com/th/id/OIP.MRJq9gwo-OZg_FHcD-BIvgHaNK?rs=1&pid=ImgDetMain" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpaperaccess.com/full/1685217.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpapercave.com/wp/wp7909172.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpapercave.com/wp/wp4381372.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpaperaccess.com/full/1975201.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://th.bing.com/th/id/R.66b32317de5027c587389276e3b2b7f5?rik=SlbJnmGK8a4RYA&riu=http%3a%2f%2fgetwallpapers.com%2fwallpaper%2ffull%2fb%2fc%2f1%2f1463554-widescreen-4k-phone-wallpapers-2160x3840-for-macbook.jpg&ehk=RlPM3IxN3Qsjc66ifioFsonl2R9Yb8fNFM0uu5bXfx0%3d&risl=&pid=ImgRaw&r=0" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpapercave.com/wp/wp4901135.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://th.bing.com/th/id/R.c32334382d2859c920fcbe34f829cf49?rik=cyfdSMTTIgHH%2bQ&pid=ImgRaw&r=0" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpaperaccess.com/full/696022.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpapercave.com/wp/wp8879411.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpaperaccess.com/full/696163.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpaperaccess.com/full/696026.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://www.pixelstalk.net/wp-content/uploads/images6/4K-Wallpaper-For-Mobile-Neon-City.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpaperaccess.com/full/155819.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpapercave.com/wp/wp6428424.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpapercave.com/wp/wp6868961.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpapercave.com/wp/wp4771359.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpapercave.com/wp/wp6835989.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpapercave.com/wp/wp5464324.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpaperaccess.com/full/696154.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://th.bing.com/th/id/OIP.vYh_ij-sfg-kodQVDSO2sgHaNK?rs=1&pid=ImgDetMain" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://i.pinimg.com/originals/ca/6a/b1/ca6ab15a161bada969e142eb9a951535.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://wallpapercave.com/wp/wc1701744.jpg" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://th.bing.com/th/id/R.4a9ad10479a6f7eb203871116e68143e?rik=PuBgv07b9ZwsaQ&pid=ImgRaw&r=0" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://th.bing.com/th/id/OIP.ctxJy48sMS72jlpuK5jjfQAAAA?rs=1&pid=ImgDetMain" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://th.bing.com/th/id/OIP.M8zGZ4eUns-yn_6NKlHMiAHaNK?rs=1&pid=ImgDetMain" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://th.bing.com/th/id/OIP.HGv5m_ME32H3Kj3DX9bTnAHaNK?rs=1&pid=ImgDetMain" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://th.bing.com/th/id/OIP.rdO9tXqD_leS7M09caWqmwHaNK?rs=1&pid=ImgDetMain" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://th.bing.com/th/id/OIP.K-kzxbVDLD592Ek9Lya_ygHaNK?rs=1&pid=ImgDetMain" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          <div class="image-container">
+                <img src="https://mail.google.com/mail/u/0?ui=2&ik=6fe109d77e&attid=0.3&permmsgid=msg-f:1809344315596504889&th=191c151197807f39&view=fimg&fur=ip&sz=s0-l75-ft&attbid=ANGjdJ9-UzD61LfRZxWK6Gvwawd9w3_88hPgspSV6o75lsnE9ZZFAjJYWvGOJOxsiXdzT07g4PWxTFAj8gQbj-HyP2XYw3bUKEzYF0JLdZdoAGUnC9v6vBNbodkkJ3M&disp=emb" alt="Image 2" onclick="openModal(this.src)">
+            </div>
+          
+            <!-- Ajoute plus d'images ici -->
+        </div>
+    </div>
+
+    <div id="myModal" class="modal">
+        <span class="close" onclick="closeModal()">×</span>
+        <img class="modal-content" id="img01">
+    </div>
+
+    <script>
+        function checkPassword() {
+            var password = document.getElementById('password').value;
+            if (password === 'SHADOW') {
+                document.getElementById('password-section').style.display = 'none';
+                document.getElementById('image-section').style.display = 'block';
+                localStorage.setItem('accessGranted', 'true');
+            } else {
+                alert('Mot de passe incorrect');
+            }
+        }
+
+        window.onload = function() {
+            if (localStorage.getItem('accessGranted') === 'true') {
+                document.getElementById('password-section').style.display = 'none';
+                document.getElementById('image-section').style.display = 'block';
+            }
+        }
+
+        function openModal(src) {
+            document.getElementById('myModal').style.display = "block";
+            document.getElementById('img01').src = src;
+        }
+
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+    </script>
+</body>
+</html>
